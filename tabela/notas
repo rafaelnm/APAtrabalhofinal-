@@ -1,0 +1,4 @@
+Os campos em vazio na tabela existem pois devido a falta de otimizacao do código, 
+ele não rodou essas instancias por completo a tempo antes do deadline para o envio.
+
+O tempo de execução do método construtivo aparentemente não foi corretamento medido e a causa merece maior investigação.
