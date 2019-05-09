@@ -12,8 +12,9 @@ public class Main {
         Grafo G = new Grafo(leitor.getnVertices(), leitor.getVertices(), leitor.getArestas());
 
         int iteracoesGrasp = 2;
+        double alfa = 0.1;
         
-        MetGrasp grasp = new MetGrasp(G, iteracoesGrasp);
+        MetGrasp grasp = new MetGrasp(G, iteracoesGrasp, alfa);
         
         
         //LACO PARA INICIALIZAR GRASP 10 VEZES COM N(iteracoesGrasp) ITERACOES)

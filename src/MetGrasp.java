@@ -1,7 +1,3 @@
-
-
-
-
 import java.util.ArrayList;
 import java.util.List;
 import java.time.Duration;
@@ -9,14 +5,15 @@ import java.time.Instant;
 
 
 
-
 public class MetGrasp {
     private int graspMax;
     private Grafo G;
+    private double alfa;
 
-    public MetGrasp(Grafo g, int graspMax) {
+    public MetGrasp(Grafo g, int graspMax, double alfa) {
         this.graspMax = graspMax;
         this.G = g;
+        this.alfa = alfa;
     }
     
     //GRASP
@@ -30,7 +27,7 @@ public class MetGrasp {
         Instant finish;
         long timeElapsed;
         //start = Instant.now(); 
-        solconstruida = construirSolucao(1, 0.1);
+        
         //finish = Instant.now();
         //long timeElapsed = Duration.between(start, finish).toNanos(); 
         
@@ -41,8 +38,9 @@ public class MetGrasp {
         System.out.print(" Valor da solucao construtiva=> ");
         System.out.println(valorSolucao(solconstruida));
         
-        start = Instant.now(); 
+        start = Instant.now();
         for (int i = 0; i < graspMax; ++i){
+        	solconstruida = construirSolucaoAleatoria(1, alfa);
             solAux = new MetVND(G, solconstruida).run();
             
             if (valorSolucao(solAux) < bestVal)
@@ -59,7 +57,7 @@ public class MetGrasp {
         System.out.println(valorSolucao(solucao));
     }
     
-    public int[] construirSolucao(int id, double alfa){
+    public int[] construirSolucaoAleatoria(int id, double alfa){
     	int count = 0;
     	Instant start = Instant.now(); 
     	int[] solucao = new int[G.getnVertices()];
