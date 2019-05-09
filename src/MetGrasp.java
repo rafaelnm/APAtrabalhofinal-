@@ -35,13 +35,15 @@ public class MetGrasp {
         //System.out.println(timeElapsed);
         
         double bestVal = Double.MAX_VALUE;
-        System.out.print(" Valor da solucao construtiva=> ");
-        System.out.println(valorSolucao(solconstruida));
+       
         
         start = Instant.now();
         for (int i = 0; i < graspMax; ++i){
         	solconstruida = construirSolucaoAleatoria(1, alfa);
             solAux = new MetVND(G, solconstruida).run();
+            
+            System.out.print(" Valor da solucao construtiva=> ");
+            System.out.println(valorSolucao(solconstruida));
             
             if (valorSolucao(solAux) < bestVal)
                 bestVal = valorSolucao(solAux);

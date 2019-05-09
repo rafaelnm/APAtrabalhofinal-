@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
         
     	
-    	Reader leitor = new Reader("bier127.txt");
+    	Reader leitor = new Reader("bayg29.txt");
         
         
         Grafo G = new Grafo(leitor.getnVertices(), leitor.getVertices(), leitor.getArestas());
